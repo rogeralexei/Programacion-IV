@@ -9,7 +9,7 @@ c=conn.cursor()
 
 # c.execute("""CREATE TABLE slangs (
 #             slang text,
-#             definition text 
+#             definition text
 #             )""") 
 
 #---------------------Funciones base-----------------------------------
