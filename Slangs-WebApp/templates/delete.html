@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<div class="jumbotron">
+    <h1 class="text-center mb-4">Elimine un Slang de la Base de Datos</h1>
+    <form method="POST">
+        <div class="form-group">
+        {{form.hidden_tag()}}
+        {{form.palabra.label}}{{form.palabra(class="form-control mb-2")}}
+        {{form.submit(class="btn btn-primary mt-4 ")}}
+        </div>
+    </form>
+</div>
+{%endblock%}

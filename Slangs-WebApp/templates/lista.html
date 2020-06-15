@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<div class="jumbotron">
+    <div class="container">
+        {% for mess in get_flashed_messages()%}
+    
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <p>{{mess}}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    
+        {%endfor%}
+        <h1 class="text-center display-2">Definiciones</h1>
+        <ul>
+        {%for slang in slangs%}
+            <li style="font-size: 1.2em;">{{slang}}</li>
+        {%endfor%}
+        </ul>
+        </div>
+</div>
+
+
+{%endblock%}
