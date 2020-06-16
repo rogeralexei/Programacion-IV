@@ -1,0 +1,44 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-center mt-5">Bienvenido a SWAPI - EATER</h1>
+                <p class="text-center">Me alimento SWAPI requests</p>
+                <div id="form">
+                    <h4>Introduce tu request (solo acepto personajes de Star Wars): </h4>
+                    <form method="POST" class="form-group">
+                        <input class="form-control" type="text" name="query" placeholder="Ejemplo: people/1">
+                        <button class="btn btn-warning mt-2 mb-2">Submit</button>
+                        <p class="mb-2">¿Dudas?<a href="https://swapi.dev/documentation"> SWAPI Docs</a></p>
+                    </form>
+                    {%if session["name"]%}
+                    <h4>Asi que buscas a <em>{{session["name"]}}</em>, te muestro su info:</h4>
+                    <code>
+                        {{session["object"]}}
+                    </code>
+                    {%endif%}
+                </div>
+                <div class="mt-4">
+                    <h1 class="text-center">Las preguntas del profesor</h1>
+                    <p class="text-center">Alimentadas por SWAPI Responses</p>
+                    <ol>
+                        <li>Tenemos <em>{{arid}} </em> films en el que se ve un planeta arido (Tatooine es el único)</li>
+                        <hr>
+                        <li>Número de wookies en la 6ta película: La api no tiene esta info </li>
+                        <hr>
+                        <li>La mayor nave de Star Wars es la <em>{{starship[0]}}</em> con una capacidad de <em>{{starship[1]}}</em></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="wrapper">
+                <img src="{{url_for('static', filename='images/death-star.svg')}}" alt="death-star">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
